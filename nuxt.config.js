@@ -1,4 +1,8 @@
 module.exports = {
+  css: [
+    { src: '~assets/main.scss', lang: 'scss' },
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
+  ],
   /*
   ** Headers of the page
   */
@@ -33,7 +37,21 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },    
+    vendor: [
+      'axios',
+      'bulma',
+      'vue-i18n'
+    ]
+  },
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: [
+    '~/plugins/i18n.js'
+  ],
+  generate: {
+    routes: ['/', '/admin', '/ko', '/ko/admin']
   }
 }
 
